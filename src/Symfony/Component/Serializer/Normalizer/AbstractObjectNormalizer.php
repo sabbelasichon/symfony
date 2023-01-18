@@ -499,6 +499,7 @@ abstract class AbstractObjectNormalizer extends AbstractNormalizer
                         [$context['key_type']] = $collectionKeyType;
                     }
 
+                    $context['collection_type'] = $type->getClassName();
                     $context['value_type'] = $collectionValueType;
                 } elseif ($type->isCollection() && \count($collectionValueType = $type->getCollectionValueTypes()) > 0 && Type::BUILTIN_TYPE_ARRAY === $collectionValueType[0]->getBuiltinType()) {
                     // get inner type for any nested array
